@@ -1,0 +1,21 @@
+Designing the builder.
+Item is the base unit of the project. It hold all type of data. It can be single item type, an object or a container.
+
+Item has 
+type - single, object, container
+flags - mandatory, remove, empty ,
+name - item name always mandatory
+data_type - type of data hold by the item
+
+Methods.
+find(char*,size)    -- for objects to be remove instead create has to be use
+create(char*,size)  -- for container
+close(char*,size)   -- done with this item
+value(char*,size)   -- use some string interpreter or a method by type
+
+
+Events comming from des-serializer can be
+CreateItem(char*, size_t) - a item will  be create or open item for written
+CloseItem(char*,size) - done with the item
+Value(char*,size)
+
