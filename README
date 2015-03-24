@@ -8,9 +8,9 @@ name - item name always mandatory
 data_type - type of data hold by the item
 
 Methods.
-find(char*,size)    -- for objects to be remove instead create has to be use
+find(char*,size)    -- for objects (to be remove use create instead)
 create(char*,size)  -- for container
-close(char*,size)   -- done with this item
+close(char*,size)   -- done with this item, validated
 value(char*,size)   -- use some string interpreter or a method by type
 
 
@@ -19,3 +19,5 @@ CreateItem(char*, size_t) - a item will  be create or open item for written
 CloseItem(char*,size) - done with the item
 Value(char*,size)
 
+Text Format ---> Parser --> Handler ---> items
+Handler : keep item status like opened, check for closing with the right name.
