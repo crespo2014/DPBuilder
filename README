@@ -8,10 +8,13 @@ name - item name always mandatory
 data_type - type of data hold by the item
 
 Methods.
-find(char*,size)    -- for objects (to be remove use create instead)
-create(char*,size)  -- for container
+create(const SubString& v)  -- Find subitem or create item for container
 close(char*,size)   -- done with this item, validated
-value(char*,size)   -- use some string interpreter or a method by type
+Set(const std::string& ) - Item has to interpret this
+Set(const char* v) - Item has to interpret this
+Set(const SubString& v)
+Set(T& val) - it is hard to figure out with method call base on type
+Item has to support set by string and by type.( invalid argument is throw by default)
 
 
 Events comming from des-serializer can be
@@ -21,3 +24,7 @@ Value(char*,size)
 
 Text Format ---> Parser --> Handler ---> items
 Handler : keep item status like opened, check for closing with the right name.
+
+Substring. 
+ size == 0 means zero end string.
+ not able to hold a nullptr or a pointer to a not valid place
