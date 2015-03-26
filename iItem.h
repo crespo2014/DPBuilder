@@ -8,6 +8,8 @@
 #ifndef IITEM_H_
 #define IITEM_H_
 
+#include "../common/substring.h"
+
 /**
  * Substring does not support point to invalid location
  * size == 0 means zero end string.
@@ -25,6 +27,8 @@ enum class item_type
   floatingPoint
   boolean,
 };
+
+//
 enum item_flags
 {
  none,
@@ -32,6 +36,7 @@ enum item_flags
  mandatory, // item is mandatory
  removed,   // item marked as remove
 };
+
 class Iitem
 {
 public:
