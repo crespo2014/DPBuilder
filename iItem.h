@@ -32,9 +32,9 @@ enum class item_type
 enum item_flags
 {
  none,
- empty,      // item does not have data
- mandatory, // item is mandatory
- removed,   // item marked as remove
+ empty,      ///< item does not have data
+ mandatory,  ///< item is mandatory
+ removed,    ///< item marked as remove
 };
 
 class Iitem
@@ -55,6 +55,14 @@ public:
    * Item has to interpret this
    */
   bool Set(const SubString& value) = 0;
+  /**
+   * Get item type
+   */
+  item_type getType() const = 0; 
+  /**
+   * Read flag status
+   */
+  bool isSet(item_flags) const = 0;
   //Set(T& val) - it is hard to figure out with method call base on type
 protected:
   /// not allowed to delete object throught the interface
