@@ -3,6 +3,9 @@
  *
  *  Created on: 26 Mar 2015
  *      Author: lester
+ *  Describe function is not implement here.
+ *  Writter interface for descriptors is needed. 
+    ObjectAItem::describe(const ObjectA&,Writter& wr ); // use template for writter.
  */
 
 #ifndef BASICITEM_H_
