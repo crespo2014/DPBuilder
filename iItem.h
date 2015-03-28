@@ -41,7 +41,7 @@ class Iitem
 {
 public:
   const SubString& getName() const = 0;
-  Iitem& createChild(const SubString& name) = 0;
+  Iitem* createChild(const SubString& name) = 0;
   /** 
    * No more data for this item, validate it
    * false if item does not validate fine
@@ -62,7 +62,9 @@ public:
   /**
    * Read flag status
    */
-  bool isSet(item_flags) const = 0;
+  bool isSet(item_flags) const = 0; ///< Test for a specific flag
+  void setBit(item_flags) = 0;      ///< activate flag
+  void clearBit(item_flags) = 0;    ///< clear flag
   //Set(T& val) - it is hard to figure out with method call base on type
 protected:
   /// not allowed to delete object throught the interface
