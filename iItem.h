@@ -73,6 +73,11 @@ public:
 	 * @param t - value to be assigned
 	 */
 	virtual void setBool(bool) = 0;
+  /**
+   * Set a value of type doble fpr this item
+   * @param s new value to be set
+   */
+  virtual void setDouble(double s) = 0;
 	/**
 	 * Get item type
 	 */
