@@ -11,6 +11,8 @@
 #include "CppUTest/TestHarness.h"
 #include "CppUTestExt/MockSupport.h"
 
+#include "../basicItem.h"
+
 
 TEST_GROUP(Serialization)
 {
@@ -26,7 +28,7 @@ TEST_GROUP(Serialization)
 
 TEST(Serialization, fullTest)
 {
-
+	basicItem item("root",item_type::object);
 }
 
 

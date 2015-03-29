@@ -10,6 +10,7 @@ targets := serializer_mtest
 common_cpp := --std=c++11 -Wall
 common_ld := -lpthread
 common_cpp += -finput-charset=ascii -Wall -Wextra -pedantic -Wmissing-declarations -Wpointer-arith -Wwrite-strings -Wformat=2 -Wlogical-op -Wcast-align -Wcast-qual -Wundef -Wmissing-include-dirs -Wfloat-equal -Wconversion
+common_cpp += -I../common
 
 serializer_mtest_src_dir := mtest
 
