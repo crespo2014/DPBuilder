@@ -20,6 +20,7 @@
 #include <initializer_list>
 #include <vector>
 #include <list>
+#include <string>
 
 #include "iItem.h"
 #include "../common/flag.h"
@@ -249,6 +250,15 @@ private:
   T min_;
   T max_;
 };
+
+template<>
+class singleItem<std::string>: public basicItem
+{
+
+};
+
+typedef singleItem<std::string> singleStringItem;
+
 
 /**
  * This class is going to be use to hold data on vector
