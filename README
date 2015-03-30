@@ -8,7 +8,7 @@ name - item name always mandatory
 data_type - type of data hold by the item
 
 Methods.
-create(const SubString& v)  -- Find subitem or create item for container
+createChild(const SubString& v)  -- Find subitem or create item for container
 close(char*,size)   -- done with this item, validated
 Set(const std::string& ) - Item has to interpret this
 Set(const char* v) - Item has to interpret this
@@ -25,6 +25,13 @@ Value(char*,size)
 Text Format ---> Parser --> Handler ---> items
 Handler : keep item status like opened, check for closing with the right name.
 
-Substring. 
- size == 0 means zero end string.
- not able to hold a nullptr or a pointer to a not valid place
+How does the json handler work.
+Event             Steps
+StartObject       Check object type, set not empty
+StartContainer    Check object type, set not empty
+Key               CreateChild and push stack, Check objec type
+Value             SetValue, close item (clear empty), pop stack | for container create child, set, close
+EndObject,
+EndContainer      Check object type    
+
+
