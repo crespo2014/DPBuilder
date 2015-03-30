@@ -34,4 +34,10 @@ Value             SetValue, close item (clear empty), pop stack | for container 
 EndObject,
 EndContainer      Check object type    
 
+How does xml parser work.
+Event             Step
+StartTag          if current == null then Check tag name and check empty is set, check for object type, CreateChild and push stack
+Data              Test item again single type, setdata
+EndTag            test item name and closeit
+
 
