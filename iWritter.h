@@ -17,6 +17,6 @@ class iWritter
   void StartContainer(const char* name);
   void EndContainer(const char* name);
   void Item(const char* name,const char* value);  // what about formatiing. do we need a method per type
-}
+};
 
 #endif /* IWRITTER_H_ */
